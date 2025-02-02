@@ -36,11 +36,9 @@ The following pretrained models were tested:
 ---
 
 ## Results
-The models were ranked based on the TOPSIS method, and the best-performing model was `facebook/bart-large-cnn`. 
+The models were ranked based on the TOPSIS method, and the best-performing model was `facebook/bart-large-cnn`.
 
-### Model Evaluation Table:
-
-(Result.png)
+![Evaluation Results](Result.png)
 
 ---
 
