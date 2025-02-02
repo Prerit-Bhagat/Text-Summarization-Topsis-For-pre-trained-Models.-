@@ -1,13 +1,28 @@
 # Text Summarization Models - TOPSIS Evaluation
 
 ## Overview
-This project implements **TOPSIS** (Technique for Order of Preference by Similarity to Ideal Solution) to evaluate and rank different pretrained text summarization models. The models are assessed based on standard evaluation metrics such as **ROUGE**, **BLEU**, and **BERTScore**.
+This project implements **TOPSIS** (Technique for Order of Preference by Similarity to Ideal Solution) to evaluate and rank different pretrained text summarization models. The models are assessed based on standard evaluation metrics such as **ROUGE**, **BLEU**, and **BERTScore**, using the **PubMed Summarization** dataset.
 
 ---
 
 ## Dataset
-- **Test Dataset** (`test.csv`): Contains articles and their corresponding summaries.
-- **Evaluation Results** (`results.csv`): Includes the scores of various models across different evaluation metrics.
+- **Dataset Source**: [CCDV PubMed Summarization](https://huggingface.co/datasets/ccdv/pubmed-summarization)
+- **Details**: 
+  - Dataset provides scientific articles (`article`) and their corresponding summaries (`abstract`).
+  - Extracted one example from the training set for testing:
+    ```python
+    dataset = load_dataset("ccdv/pubmed-summarization", "section")
+    sample_text = dataset["train"][0]["article"]  # First article
+    reference_summary = dataset["train"][0]["abstract"]  # Corresponding abstract
+    ```
+  - Example output:
+    ```
+    Sample Text:
+    [First few lines of the article...]
+    
+    Reference Summary:
+    [Corresponding abstract...]
+    ```
 
 ---
 
@@ -22,6 +37,13 @@ The following pretrained models were tested:
 7. `t5-large`
 
 ---
+
+## Implementation Details
+- **Truncation**: 
+  - Input was truncated to a maximum length of 1024 tokens for efficient processing.
+  ```python
+  max_input_length = 1024
+  sample_text_truncated = sample_text[:max_input_length]
 
 ## Metrics Used
 1. **ROUGE** (Recall-Oriented Understudy for Gisting Evaluation):
@@ -53,3 +75,11 @@ The bar chart above shows the relative closeness of different models as calculat
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-repo-name.git
+
+
+## Conclusion
+This evaluation demonstrates that the facebook/bart-large-cnn model outperformed others in terms of ROUGE, BLEU, and BERTScore metrics, making it the most suitable choice for text summarization tasks based on the given dataset.
+
+The TOPSIS methodology proved to be an effective multi-criteria decision-making tool, enabling a comprehensive comparison across various metrics. It highlights the importance of evaluating models holistically rather than relying on a single metric, ensuring robust and unbiased results.
+
+While models like t5-small and t5-base offered satisfactory performance, their relative closeness scores suggest they are better suited for resource-constrained environments. In contrast, Falconsai/text_summarization and google/pegasus-cnn_dailymail ranked lower, potentially indicating limitations in handling the specific dataset used.
