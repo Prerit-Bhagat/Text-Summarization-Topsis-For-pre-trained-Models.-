@@ -40,15 +40,7 @@ The models were ranked based on the TOPSIS method, and the best-performing model
 
 ### Model Evaluation Table:
 
-| Model                                | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU  | BERTScore | TOPSIS Score | Rank |
-|--------------------------------------|---------|---------|---------|-------|-----------|--------------|------|
-| facebook/bart-large-cnn              | 0.296   | 0.113   | 0.296   | 10.17 | 0.867     | 1.000        | 1    |
-| google/pegasus-cnn_dailymail         | 0.265   | 0.044   | 0.265   | 1.79  | 0.846     | 0.570        | 2    |
-| Falconsai/text_summarization         | 0.172   | 0.053   | 0.172   | 2.56  | 0.854     | 0.387        | 3    |
-| csebuetnlp/mT5_multilingual_XLSum    | 0.111   | 0.000   | 0.074   | 1.21  | 0.848     | 0.011        | 4    |
-| t5-small                             | 0.204   | 0.062   | 0.201   | 3.45  | 0.851     | 0.630        | 5    |
-| t5-base                              | 0.215   | 0.078   | 0.215   | 4.89  | 0.860     | 0.850        | 6    |
-| t5-large                             | 0.230   | 0.095   | 0.220   | 7.25  | 0.864     | 0.770        | 7    |
+(Result.png)
 
 ---
 
