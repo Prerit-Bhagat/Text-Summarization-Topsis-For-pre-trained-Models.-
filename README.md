@@ -74,7 +74,7 @@ The bar chart above shows the relative closeness of different models as calculat
 ## How to Use
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo-name.git
+   git clone https://github.com/your-repo-name.git](https://github.com/Prerit-Bhagat/Text-Summarization-Topsis-For-pre-trained-Models.-
 
 
 ## Conclusion
